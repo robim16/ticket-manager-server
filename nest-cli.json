@@ -1,0 +1,50 @@
+{
+  "$schema": "https://json.schemastore.org/nest-cli",
+  "collection": "@nestjs/schematics",
+  "sourceRoot": "apps/ticket-manager/src",
+  "compilerOptions": {
+    "deleteOutDir": true,
+    "webpack": true,
+    "tsConfigPath": "apps/ticket-manager/tsconfig.app.json"
+  },
+  "monorepo": true,
+  "root": "apps/ticket-manager",
+  "projects": {
+    "api-gateway": {
+      "type": "application",
+      "root": "apps/api-gateway",
+      "entryFile": "main",
+      "sourceRoot": "apps/api-gateway/src",
+      "compilerOptions": {
+        "tsConfigPath": "apps/api-gateway/tsconfig.app.json"
+      }
+    },
+    "notifications-service": {
+      "type": "application",
+      "root": "apps/notifications-service",
+      "entryFile": "main",
+      "sourceRoot": "apps/notifications-service/src",
+      "compilerOptions": {
+        "tsConfigPath": "apps/notifications-service/tsconfig.app.json"
+      }
+    },
+    "ticket-manager": {
+      "type": "application",
+      "root": "apps/ticket-manager",
+      "entryFile": "main",
+      "sourceRoot": "apps/ticket-manager/src",
+      "compilerOptions": {
+        "tsConfigPath": "apps/ticket-manager/tsconfig.app.json"
+      }
+    },
+    "tickets-service": {
+      "type": "application",
+      "root": "apps/tickets-service",
+      "entryFile": "main",
+      "sourceRoot": "apps/tickets-service/src",
+      "compilerOptions": {
+        "tsConfigPath": "apps/tickets-service/tsconfig.app.json"
+      }
+    }
+  }
+}
