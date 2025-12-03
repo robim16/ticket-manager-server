@@ -1,15 +1,15 @@
 import { Module } from '@nestjs/common';
 import { TypeOrmModule } from '@nestjs/typeorm';
 
-import { Ticket } from '../src/domain/entities/ticket.entity';
-import { TicketsController } from '../src/infraestructure/controllers/tickets.controller';
+import { Ticket } from './domain/entities/ticket.entity';
+import { TicketsController } from './infrastructure/controllers/tickets.controller';
 
-import { TicketRepository } from '../src/domain/repositories/ticket.repository';
-import { TicketRepositoryImpl } from '../src/infraestructure/repositories/ticket.repository.impl';
+import { TicketRepository } from './domain/repositories/ticket.repository';
+import { TicketRepositoryImpl } from './infrastructure/repositories/ticket.repository.impl';
 
-import { CreateTicketUseCase } from '../src/application/use-cases/create-ticket.usecase';
-import { GetTicketsUseCase } from '../src/application/use-cases/get-tickets.usecase';
-import { ChangeTicketStatusUseCase } from '../src/application/use-cases/change-ticket-status.usecase';
+import { CreateTicketUseCase } from './application/use-cases/create-ticket.usecase';
+import { GetTicketsUseCase } from './application/use-cases/get-tickets.usecase';
+import { ChangeTicketStatusUseCase } from './application/use-cases/change-ticket-status.usecase';
 import { GetTicketUseCase } from './application/use-cases/get-ticket-usecase';
 import dataSource from '../typeorm.config';
 

@@ -1,7 +1,7 @@
 import { Module } from '@nestjs/common';
 import { ClientsModule, Transport } from '@nestjs/microservices';
-import { ApiGatewayController } from '../src/infraestructure/controllers/api-gateway.controller';
-import { ApiGatewayService } from '../src/application/api-gateway.service';
+import { ApiGatewayController } from './infrastructure/controllers/api-gateway.controller';
+import { ApiGatewayService } from './application/api-gateway.service';
 
 @Module({
   imports: [

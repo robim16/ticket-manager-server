@@ -1,7 +1,7 @@
 import { Injectable } from '@nestjs/common';
 import { TicketRepository } from '../../domain/repositories/ticket.repository';
 import { ChangeTicketStatusDto } from '../dtos/change-ticket-status.dto';
-import { EventPublisher } from '../../infraestructure/event-publisher/event.publisher';
+import { EventPublisher } from '../../infrastructure/event-publisher/event.publisher';
 import { TicketStatusChangedEvent } from '../../domain/events/ticket-status-changed.event';
 
 @Injectable()
