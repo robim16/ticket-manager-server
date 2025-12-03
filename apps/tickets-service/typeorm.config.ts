@@ -1,19 +1,22 @@
 import { DataSource } from 'typeorm';
 import * as dotenv from 'dotenv';
-import { Ticket } from './src/domain/entities/ticket.entity';
 
 dotenv.config();
 
 const dataSource = new DataSource({
   type: 'postgres',
   host: process.env.DB_HOST || 'localhost',
-  port: Number(process.env.DB_PORT) || 5434,
+  port: Number(process.env.DB_PORT) || 5432,
   username: process.env.DB_USERNAME || 'postgres',
-  password: process.env.DB_PASSWORD || 'postgres',
+  password: 'Pwsputnik16%',
   database: process.env.DB_NAME || 'ticketsdb',
-  entities: [Ticket],
-  migrations: ['src/migrations/*.ts'],
-  synchronize: false, 
+
+
+  entities: ['src/domain/entities/*.ts'],
+
+  migrations: ['dist/apps/tickets-service/src/migrations/*.js'],
+
+  synchronize: false,
   logging: true,
 });
 

@@ -15,8 +15,8 @@ import dataSource from '../typeorm.config';
 
 @Module({
   imports: [
-   TypeOrmModule.forRoot(dataSource.options),  
-    TypeOrmModule.forFeature([Ticket]), 
+    TypeOrmModule.forRoot(dataSource.options),
+    TypeOrmModule.forFeature([Ticket]),
   ],
   controllers: [TicketsController],
   providers: [
