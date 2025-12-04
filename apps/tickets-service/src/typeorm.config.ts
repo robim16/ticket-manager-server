@@ -12,9 +12,8 @@ const dataSource = new DataSource({
   database: process.env.DB_NAME || 'ticketsdb',
 
 
-  entities: ['src/domain/entities/*.ts'],
-
-  migrations: ['dist/apps/tickets-service/src/migrations/*.js'],
+  entities: [__dirname + '/**/*.entity.{ts,js}'],
+  migrations: [__dirname + '/migrations/*.{ts,js}'],
 
   synchronize: false,
   logging: true,

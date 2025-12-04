@@ -1,7 +1,7 @@
 import { MigrationInterface, QueryRunner } from "typeorm";
 
-export class CreateTicketTable1764789935762 implements MigrationInterface {
-    name = 'CreateTicketTable1764789935762'
+export class Initial1764881030243 implements MigrationInterface {
+    name = 'Initial1764881030243'
 
     public async up(queryRunner: QueryRunner): Promise<void> {
         await queryRunner.query(`CREATE TYPE "public"."ticket_estado_enum" AS ENUM('OPEN', 'IN_PROGRESS', 'CLOSED')`);
