@@ -1,4 +1,4 @@
-import { Injectable, NotFoundException } from '@nestjs/common';
+import { BadRequestException, Injectable, NotFoundException } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Repository } from 'typeorm';
 import { Ticket, TicketStatus } from '../../domain/entities/ticket.entity';
@@ -17,16 +17,20 @@ export class TicketRepositoryImpl implements TicketRepository {
   }
 
   async changeStatus(id: string, estado: TicketStatus): Promise<Ticket> {
-    await this.repo.update(id, { estado });
+    if (!estado) {
+      throw new BadRequestException('El estado no puede ser nulo');
+    }
 
-    const ticket = await this.repo.findOneBy({ id });
+    const result = await this.repo.update({ id }, { estado });
 
-    if (!ticket) {
+    if (result.affected === 0) {
       throw new NotFoundException(`Ticket con id ${id} no existe`);
     }
 
-    return ticket;
+    const ticket = await this.repo.findOneBy({ id });
+    return ticket!;
   }
+
 
 
   async findAll(): Promise<Ticket[]> {
