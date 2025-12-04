@@ -27,8 +27,8 @@ export class TicketsController {
   }
 
   @MessagePattern('ticket.findOne')
-  findOne(@Payload() id: string) {
-    return this.getTicket.execute(id);
+  findOne(@Payload() payload: { id: string }) {
+    return this.getTicket.execute(payload.id);
   }
 
   @MessagePattern('ticket.changeStatus')

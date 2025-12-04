@@ -34,7 +34,7 @@ export class TicketRepositoryImpl implements TicketRepository {
   }
 
   async findOne(id: string): Promise<Ticket> {
-    const ticket = await this.repo.findOneBy({ id });
+    const ticket = await this.repo.findOneBy({ id: id });
 
     if (!ticket) {
       throw new NotFoundException(`Ticket con id ${id} no existe`);

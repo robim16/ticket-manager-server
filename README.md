@@ -1,5 +1,7 @@
 1. editar el .env con las credenciales de postgresql
-2. ejecutar las migraciones
-npx ts-node -r tsconfig-paths/register ./node_modules/typeorm/cli.js migration:generate "apps/tickets-service/src/migrations/CreateTicketTable" -d "apps/tickets-service/typeorm.config.ts"
 
-3. 
+2. instalar las dependencias
+
+3. ejecutar las migraciones: npm run migration:generate:tickets && npm run migration:run:tickets
+
+4. descargar y levantar en docker la imagen de RabbitMQ
