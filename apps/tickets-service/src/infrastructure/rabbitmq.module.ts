@@ -1,5 +1,6 @@
 import { Module } from '@nestjs/common';
 import { ClientsModule, Transport } from '@nestjs/microservices';
+import { EventPublisher } from './event-publisher/event.publisher';
 
 @Module({
   imports: [
@@ -15,6 +16,7 @@ import { ClientsModule, Transport } from '@nestjs/microservices';
       },
     ]),
   ],
-  exports: [ClientsModule],
+  providers: [EventPublisher],       
+  exports: [ClientsModule, EventPublisher], 
 })
 export class RabbitMQModule {}

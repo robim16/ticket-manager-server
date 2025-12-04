@@ -1,8 +1,10 @@
 {
-  "$schema": "https://json.schemastore.org/nest-cli",
+  "$schema": "https://json.schemastore.org/nest-cli.json",
   "collection": "@nestjs/schematics",
   "monorepo": true,
   "root": "apps",
+  "sourceRoot": "apps",
+  "entryFile": "main",
   "compilerOptions": {
     "deleteOutDir": true
   },
@@ -16,15 +18,6 @@
         "tsConfigPath": "apps/api-gateway/tsconfig.app.json"
       }
     },
-    "notifications-service": {
-      "type": "application",
-      "root": "apps/notifications-service",
-      "entryFile": "main",
-      "sourceRoot": "apps/notifications-service/src",
-      "compilerOptions": {
-        "tsConfigPath": "apps/notifications-service/tsconfig.app.json"
-      }
-    },
     "tickets-service": {
       "type": "application",
       "root": "apps/tickets-service",
@@ -32,6 +25,15 @@
       "sourceRoot": "apps/tickets-service/src",
       "compilerOptions": {
         "tsConfigPath": "apps/tickets-service/tsconfig.app.json"
+      }
+    },
+    "notifications-service": {
+      "type": "application",
+      "root": "apps/notifications-service",
+      "entryFile": "main",
+      "sourceRoot": "apps/notifications-service/src",
+      "compilerOptions": {
+        "tsConfigPath": "apps/notifications-service/tsconfig.app.json"
       }
     }
   }

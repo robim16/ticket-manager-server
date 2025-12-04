@@ -8,10 +8,11 @@ import { ApiGatewayService } from './application/api-gateway.service';
     ClientsModule.register([
       {
         name: 'TICKETS_SERVICE',
-        transport: Transport.TCP,
+        transport: Transport.RMQ,
         options: {
-          host: 'localhost',
-          port: 4001,
+          urls: ['amqp://localhost:5672'],
+          queue: 'tickets_queue',
+          queueOptions: { durable: true },
         },
       },
     ]),

@@ -11,12 +11,15 @@ import { CreateTicketUseCase } from './application/use-cases/create-ticket.useca
 import { GetTicketsUseCase } from './application/use-cases/get-tickets.usecase';
 import { ChangeTicketStatusUseCase } from './application/use-cases/change-ticket-status.usecase';
 import { GetTicketUseCase } from './application/use-cases/get-ticket-usecase';
-import dataSource from '../typeorm.config';
+import dataSource from './typeorm.config';
+import { EventPublisher } from './infrastructure/event-publisher/event.publisher';
+import { RabbitMQModule } from './infrastructure/rabbitmq.module';
 
 @Module({
   imports: [
     TypeOrmModule.forRoot(dataSource.options),
     TypeOrmModule.forFeature([Ticket]),
+    RabbitMQModule
   ],
   controllers: [TicketsController],
   providers: [
@@ -24,7 +27,8 @@ import dataSource from '../typeorm.config';
     CreateTicketUseCase,
     GetTicketsUseCase,
     ChangeTicketStatusUseCase,
-    GetTicketUseCase
+    GetTicketUseCase,
+    EventPublisher
   ],
 })
 export class TicketsServiceModule { }
