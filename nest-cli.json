@@ -18,13 +18,13 @@
         "tsConfigPath": "apps/api-gateway/tsconfig.app.json"
       }
     },
-    "tickets-service": {
+    "auth-service": {
       "type": "application",
-      "root": "apps/tickets-service",
+      "root": "apps/auth-service",
       "entryFile": "main",
-      "sourceRoot": "apps/tickets-service/src",
+      "sourceRoot": "apps/auth-service/src",
       "compilerOptions": {
-        "tsConfigPath": "apps/tickets-service/tsconfig.app.json"
+        "tsConfigPath": "apps/auth-service/tsconfig.app.json"
       }
     },
     "notifications-service": {
@@ -34,6 +34,15 @@
       "sourceRoot": "apps/notifications-service/src",
       "compilerOptions": {
         "tsConfigPath": "apps/notifications-service/tsconfig.app.json"
+      }
+    },
+    "tickets-service": {
+      "type": "application",
+      "root": "apps/tickets-service",
+      "entryFile": "main",
+      "sourceRoot": "apps/tickets-service/src",
+      "compilerOptions": {
+        "tsConfigPath": "apps/tickets-service/tsconfig.app.json"
       }
     }
   }
