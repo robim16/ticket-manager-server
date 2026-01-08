@@ -7,13 +7,18 @@ import { Repository } from "typeorm";
 
 @Injectable()
 export class UserRepositoryImpl implements UserRepository {
-    constructor() {
-    }
+    constructor(
+        @InjectRepository(User)
+        private readonly repository: Repository<User>
+    ) { }
+
     create(data: { name: string; email: string; username: string; password: string; }): Promise<User> {
-        throw new Error("Method not implemented.");
-    }
-    findByEmail(email: string): Promise<User | null> {
-        throw new Error("Method not implemented.");
+        const user = this.repository.create(data);
+        return this.repository.save(user);
     }
 
+    findByEmail(email: string): Promise<User | null> {
+        return this.repository.findOneBy({ email });
+    }
 }
+
