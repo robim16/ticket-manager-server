@@ -4,7 +4,7 @@ import { RegisterUseCase } from "../../application/use-cases/register.usecase";
 import { MessagePattern, Payload } from "@nestjs/microservices";
 import { JwtService } from "@nestjs/jwt";
 import { RegisterDto } from "../../application/dtos/register.dto";
-import { Public } from "../auth/public.decorator";
+
 
 @Controller()
 export class AuthController {
@@ -15,7 +15,6 @@ export class AuthController {
 
 
     @UseGuards(AuthGuard('local'))
-    @Public()
     @MessagePattern('auth.login')
     login(@Req() req) {
         const payload = { sub: req.user.id, email: req.user.email };
@@ -25,7 +24,6 @@ export class AuthController {
     }
 
 
-    @Public()
     @MessagePattern('auth.register')
     async register(@Body() dto: RegisterDto) {
         const user = await this.registerUseCase.execute(dto);

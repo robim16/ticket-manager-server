@@ -3,7 +3,7 @@ import { ClientsModule, Transport } from '@nestjs/microservices';
 import { ApiGatewayController } from './infrastructure/controllers/api-gateway.controller';
 import { ApiGatewayService } from './application/api-gateway.service';
 import { APP_GUARD } from '@nestjs/core';
-import { JwtAuthGuard } from 'apps/auth-service/src/infrastructure/auth/jwt-auth.guard';
+import { JwtAuthGuard } from './infrastructure/auth/jwt-auth.guard';
 
 @Module({
   imports: [

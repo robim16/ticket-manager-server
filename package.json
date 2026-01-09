@@ -10,7 +10,7 @@
     "format": "prettier --write \"apps/**/*.ts\" \"libs/**/*.ts\"",
     "start": "nest start",
     "start:dev": "nest start --watch",
-    "start:all": "concurrently \"nest start tickets-service --watch\" \"nest start api-gateway --watch\" \"nest start notifications-service --watch\"",
+    "start:all": "concurrently \"nest start tickets-service --watch\" \"nest start api-gateway --watch\" \"nest start notifications-service --watch\" \"nest start auth-service --watch\"",
     "start:debug": "nest start --debug --watch",
     "start:prod": "node dist/apps/ticket-manager/main",
     "typeorm": "ts-node -r tsconfig-paths/register ./node_modules/typeorm/cli.js",

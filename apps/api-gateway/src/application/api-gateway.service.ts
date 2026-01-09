@@ -11,6 +11,8 @@ export class ApiGatewayService {
   constructor(
     @Inject('TICKETS_SERVICE')
     private readonly ticketsClient: ClientProxy,
+
+    @Inject('AUTH_SERVICE')
     private readonly authClient: ClientProxy
   ) {}
 

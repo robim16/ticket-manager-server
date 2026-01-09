@@ -9,7 +9,7 @@ import {
 import { ApiGatewayService } from '../../application/api-gateway.service';
 import { CreateTicketDto } from '../../domain/dtos/create-ticket.dto';
 import { UpdateTicketStatusDto } from '../../domain/dtos/update-ticket-status.dto';
-import { Public } from 'apps/auth-service/src/infrastructure/auth/public.decorator';
+import { Public } from '../../infrastructure/auth/public.decorator';
 import { LoginDto } from '../../domain/dtos/login.dto';
 import { RegisterDto } from '../../domain/dtos/register.dto';
 
